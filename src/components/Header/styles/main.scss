@@ -5,8 +5,13 @@
 .header {
 	display: flex;
 	justify-content: space-between;
-	height: 100px;
+	height: 60px;
 	border-bottom: 1px solid $neutral-200;
+}
+@media (min-width: $small-screen) {
+	.header {
+		height: 100px;
+	}
 }
 .header--left {
 	display: flex;

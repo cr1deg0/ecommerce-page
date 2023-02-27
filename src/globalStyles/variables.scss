@@ -22,8 +22,8 @@ $neutral-200: hsl(222, 10%, 80%);
 $neutral-100: hsl(223, 64%, 98%);
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
-// - Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+$black-semi: rgba(0, 0, 0, 0.5);
 
 // screen size
 
-$small-screen: 500px;
+$small-screen: 800px;

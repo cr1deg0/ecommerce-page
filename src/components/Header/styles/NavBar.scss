@@ -4,25 +4,48 @@
 .header-navigation {
 	display: flex;
 	height: 100%;
-	ul {
-		display: flex;
-		list-style: none;
+	list-style: none;
+
+	li {
+		margin-inline: 1.2rem;
+		height: 100%;
+		@include flex-centre;
+
+		a {
+			text-decoration: none;
+			color: $neutral-400;
+		}
+	}
+	li:hover {
+		border-bottom: 3px solid $primary-300;
+
+		a {
+			color: $black;
+		}
+	}
+}
+
+@media (max-width: $small-screen) {
+	nav {
+		position: absolute;
+		height: 100vh;
+		width: 100vw;
+		background-color: $black-semi;
+	}
+	.header-navigation {
+		flex-direction: column;
+		background-color: white;
+		width: 70%;
+		padding-top: 4rem;
+		padding-left: 2rem;
 
 		li {
-			margin-inline: 1.2rem;
-			height: 100%;
-			@include flex-centre;
-
-			a {
-				text-decoration: none;
-				color: $neutral-400;
-			}
-		}
-		li:hover {
-			border-bottom: 3px solid $primary-300;
+			max-height: 2rem;
+			margin-inline: 0;
 
 			a {
 				color: $black;
+				font-weight: $font-medium;
 			}
 		}
 	}

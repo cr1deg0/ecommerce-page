@@ -25,15 +25,13 @@ const NavBar = () => {
 	]
 	return (
 		<nav aria-label='Main menu'>
-			<div className='header-navigation'>
-				<ul>
-					{navigationLinks.map((link, index) => (
-						<li key={index} className='menu-link'>
-							<a href={link.href}>{link.name}</a>
-						</li>
-					))}
-				</ul>
-			</div>
+			<ul className='header-navigation'>
+				{navigationLinks.map((link, index) => (
+					<li key={index} className='menu-link'>
+						<a href={link.href}>{link.name}</a>
+					</li>
+				))}
+			</ul>
 		</nav>
 	)
 }

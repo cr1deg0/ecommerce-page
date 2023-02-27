@@ -6,7 +6,7 @@ export const useSmallScreen = () => {
 	)
 
 	// Set size according to overall breakpoints
-	const screenBreakPoint = 500
+	const screenBreakPoint = 800
 
 	useEffect(() => {
 		const handleWindowResize = () => {
