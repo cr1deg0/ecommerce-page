@@ -1,0 +1,17 @@
+@import '../../../globalStyles/mixins.scss';
+@import '../../../globalStyles/variables.scss';
+
+.header {
+	@include flex-centre;
+	justify-content: space-between;
+	height: 100px;
+	border-bottom: 1px solid $neutral-200;
+
+	.header--right {
+		display: flex;
+
+		img {
+			margin-right: 2rem;
+		}
+	}
+}

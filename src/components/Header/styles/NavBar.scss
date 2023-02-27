@@ -1,0 +1,17 @@
+@import '../../../globalStyles/variables.scss';
+
+.header-navigation {
+	ul {
+		display: flex;
+		list-style: none;
+
+		li {
+			margin-inline: 1.2rem;
+
+			a {
+				text-decoration: none;
+				color: $neutral-400;
+			}
+		}
+	}
+}

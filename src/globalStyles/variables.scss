@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+// typography
+
+$font-family: 'Kumbh Sans', sans-serif;
+
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+$fs-300: 1rem;
+
+// Colors
+
+$primary-300: hsl(26, 100%, 55%);
+$primary-100: hsl(25, 100%, 94%);
+
+$neutral-500: hsl(220, 13%, 13%);
+$neutral-400: hsl(219, 9%, 45%);
+$neutral-300: hsl(220, 11%, 84%);
+$neutral-200: hsl(222, 10%, 80%);
+$neutral-100: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+// - Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+
+// screen size
+
+$small-screen: 500px;
