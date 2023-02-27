@@ -12,12 +12,12 @@ const Header = () => {
 				Skip to main content
 			</a>
 			<div className='header'>
-				<div className='header--right'>
+				<div className='header--left'>
 					{smallScreen && <NavToggler />}
 					<img src='./images/logo.svg' alt='Sneakers' />
 					<NavBar />
 				</div>
-				<div className='header--left'>
+				<div className='header--right'>
 					<button>
 						<img src='./images/icon-cart.svg' alt='Shopping cart' />
 					</button>
