@@ -18,8 +18,15 @@ const Header = () => {
 					<NavBar />
 				</div>
 				<div className='header--left'>
-					<button>Cart</button>
-					<a>Profile</a>
+					<button>
+						<img src='./images/icon-cart.svg' alt='Shopping cart' />
+					</button>
+					<a href='/#' aria-label='Access your account data'>
+						<img
+							src='./images/image-avatar.png'
+							alt='your profile picture'
+						/>
+					</a>
 				</div>
 			</div>
 		</header>
