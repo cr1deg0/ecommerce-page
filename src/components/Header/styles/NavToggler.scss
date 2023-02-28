@@ -1,0 +1,12 @@
+@import '../../../globalStyles/variables.scss';
+@import '../../../globalStyles/mixins.scss';
+
+.header-nav-toggler {
+	position: absolute;
+	border: none;
+	@include flex-centre;
+	justify-content: center;
+	background-color: $white;
+	margin: calc($small-screen-header-height/2 - 7px) 0 0 2rem;
+	z-index: 10;
+}
