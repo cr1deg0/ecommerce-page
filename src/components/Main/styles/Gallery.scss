@@ -10,7 +10,7 @@
 .main-img {
 	display: block;
 	min-width: 100vw;
-	max-height: 350px;
+	max-height: $small-screen-img-height;
 	object-fit: cover;
 }
 .btn-previous,
@@ -23,12 +23,20 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	top: calc(
+		$small-screen-img-height / 2 + $small-screen-header-height - 20px
+	);
 }
 .btn-previous {
-	top: calc(350px / 2 + $small-screen-header-height - 20px);
 	left: 1.2rem;
 	svg {
 		margin-left: -4px;
+	}
+}
+.btn-next {
+	right: 1.2rem;
+	svg {
+		margin-right: -4px;
 	}
 }
 .gallery--thumbnail {
@@ -39,12 +47,11 @@
 	.gallery {
 		padding-inline: 3rem;
 	}
-	.main-img-btn {
-		display: none;
-	}
 	.main-img {
 		border-radius: 12px;
 		max-width: 400px;
+		min-width: 400px;
+		max-height: 100%;
 		margin-bottom: 2rem;
 	}
 	.gallery--thumbnail {
