@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
 import './styles/NavToggler.scss'
 
-const NavToggler = () => {
-	const [navOpen, setNavOpen] = useState(false)
-
-	const closeMenuIcon = (
+type PropsType = {
+	menuOpen: boolean
+	setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+const NavToggler = ({ menuOpen, setMenuOpen }: PropsType) => {
+	const openMenuIcon = (
 		<svg
 			width='16'
 			height='15'
@@ -20,7 +21,7 @@ const NavToggler = () => {
 			/>
 		</svg>
 	)
-	const openMenuIcon = (
+	const closeMenuIcon = (
 		<svg
 			width='14'
 			height='15'
@@ -42,8 +43,9 @@ const NavToggler = () => {
 			aria-expanded='false'
 			aria-label='Toggle Navigation'
 			className='header-nav-toggler'
+			onClick={() => setMenuOpen((prev) => !prev)}
 		>
-			{navOpen ? openMenuIcon : closeMenuIcon}
+			{menuOpen ? closeMenuIcon : openMenuIcon}
 		</button>
 	)
 }

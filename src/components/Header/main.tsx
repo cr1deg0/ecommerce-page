@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { useSmallScreen } from '../../hooks/useSmallScreen'
 import './styles/main.scss'
 import NavBar from './NavBar'
@@ -5,6 +6,7 @@ import NavToggler from './NavToggler'
 
 const Header = () => {
 	const smallScreen = useSmallScreen()
+	const [menuOpen, setMenuOpen] = useState(false)
 
 	return (
 		<header aria-label='Main menu'>
@@ -13,9 +15,14 @@ const Header = () => {
 			</a>
 			<div className='header'>
 				<div className='header--left'>
-					{smallScreen && <NavToggler />}
+					{smallScreen && (
+						<NavToggler
+							menuOpen={menuOpen}
+							setMenuOpen={setMenuOpen}
+						/>
+					)}
 					<img src='./images/logo.svg' alt='Sneakers' />
-					<NavBar />
+					<NavBar menuOpen={menuOpen} />
 				</div>
 				<div className='header--right'>
 					<button>
