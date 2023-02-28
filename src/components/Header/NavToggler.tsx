@@ -44,6 +44,7 @@ const NavToggler = ({ menuOpen, setMenuOpen }: PropsType) => {
 			aria-label='Toggle Navigation'
 			className='header-nav-toggler'
 			onClick={() => setMenuOpen((prev) => !prev)}
+			tabIndex={0}
 		>
 			{menuOpen ? closeMenuIcon : openMenuIcon}
 		</button>

@@ -36,11 +36,12 @@
 		flex-direction: column;
 		background-color: white;
 		width: 70%;
-		padding-top: 4rem;
+		padding-top: 5rem;
 		padding-left: 2rem;
 
 		li {
 			max-height: 2rem;
+			max-width: 70%;
 			margin-inline: 0;
 
 			a {

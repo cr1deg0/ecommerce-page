@@ -25,3 +25,9 @@ body {
 	white-space: nowrap;
 	width: 1px;
 }
+
+button:focus,
+a:focus {
+	border: 2px solid $primary-300;
+	padding: 0.4rem;
+}
