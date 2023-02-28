@@ -1,44 +1,6 @@
 @import '../../../globalStyles/variables.scss';
 @import '../../../globalStyles/mixins.scss';
 
-.gallery {
-	border: 1px solid red;
-	button {
-		border: none;
-	}
-}
-.main-img {
-	display: block;
-	min-width: 100vw;
-	max-height: $small-screen-img-height;
-	object-fit: cover;
-}
-.btn-previous,
-.btn-next {
-	position: absolute;
-	background-color: $white;
-	border-radius: 50%;
-	width: 46px;
-	aspect-ratio: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	top: calc(
-		$small-screen-img-height / 2 + $small-screen-header-height - 20px
-	);
-}
-.btn-previous {
-	left: 1.2rem;
-	svg {
-		margin-left: -4px;
-	}
-}
-.btn-next {
-	right: 1.2rem;
-	svg {
-		margin-right: -4px;
-	}
-}
 .gallery--thumbnail {
 	display: none;
 }
