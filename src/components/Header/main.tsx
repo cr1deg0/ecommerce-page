@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSmallScreen } from '../../hooks/useSmallScreen'
 import './styles/main.scss'
 import NavBar from './NavBar'
@@ -8,6 +8,13 @@ const Header = () => {
 	const smallScreen = useSmallScreen()
 	const [menuOpen, setMenuOpen] = useState(false)
 
+	useEffect(() => {
+		if (!smallScreen) {
+			setMenuOpen(true)
+		} else {
+			setMenuOpen(false)
+		}
+	}, [smallScreen])
 	return (
 		<header aria-label='Main menu'>
 			<a className='sr-only' href=''>
