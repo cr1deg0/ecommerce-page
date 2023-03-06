@@ -11,6 +11,7 @@
 @media (min-width: $small-screen) {
 	.header {
 		height: $big-screen-header-height;
+		margin-inline: $big-screen-margin;
 	}
 }
 .header--left {
@@ -29,7 +30,7 @@
 }
 
 .header--right {
-	@include flex-centre;
+	@include flex-center;
 	button {
 		border: none;
 		background-color: $white;

@@ -1,0 +1,29 @@
+@import '../../../globalStyles/variables.scss';
+@import '../../../globalStyles/mixins.scss';
+
+.lightbox-container {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: $black-semi;
+	@include flex-center;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: 1fr, 1fr, 1fr;
+	grid-template-rows: 1fr min-content min-content min-content 1fr;
+	grid-template-areas:
+		'. . .'
+		'. closebtn .'
+		'. slider .'
+		'. thumbnails .'
+		'. . .';
+}
+
+.btn-close {
+	border: none;
+	background-color: transparent;
+	grid-area: closebtn;
+}
+.lightbox-slider {
+	grid-area: slider;
+}

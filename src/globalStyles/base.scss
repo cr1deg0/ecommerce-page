@@ -10,12 +10,6 @@ body {
 	font-family: $font-family;
 }
 
-@media (min-width: $small-screen) {
-	body {
-		margin-inline: 6rem;
-	}
-}
-
 .sr-only:not(:focus):not(:active) {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);

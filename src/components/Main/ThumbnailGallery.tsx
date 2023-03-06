@@ -1,12 +1,11 @@
 import { useState } from 'react'
-// import { useToggleLightbox } from '../../hooks/useToggleLightbox'
+import { useLightboxToggle } from '../../context/LightboxToggleContext'
 import productImages from './data/productImages'
 import './styles/ThumbnailGallery.scss'
 
 const ThumbnailGallery = () => {
 	const [thumbnailIndex, setThumbnailIndex] = useState(0)
-	// const [toggleLightbox, setToggleLightbox] = useToggleLightbox()
-	const [toggleLightbox, setToggleLightbox] = useState(false)
+	const { setToggleLightbox } = useLightboxToggle()
 
 	return (
 		<div className='gallery--thumbnail-main'>
