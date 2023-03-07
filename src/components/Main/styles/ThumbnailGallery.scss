@@ -19,37 +19,3 @@
 	min-width: 400px;
 	max-height: 100%;
 }
-.gallery--thumbnail {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-
-	span {
-		position: relative;
-		label {
-			cursor: pointer;
-			// min-width: 74px;
-		}
-		input[type='radio'] {
-			position: absolute;
-			top: 30px;
-			left: 30px;
-			opacity: 0;
-		}
-		input[type='radio']:checked + label {
-			span {
-				display: block;
-				border-radius: 10px;
-				border: 2.5px solid $primary-300;
-			}
-			img {
-				opacity: 50%;
-			}
-		}
-	}
-}
-.thumbnail-img {
-	display: block;
-	border-radius: 8px;
-	max-width: 70px;
-}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLightboxToggle } from '../../context/LightboxToggleContext'
 import productImages from './data/productImages'
 import './styles/ThumbnailGallery.scss'
+import Thumbnails from './Thumbnails'
 
 const ThumbnailGallery = () => {
 	const [thumbnailIndex, setThumbnailIndex] = useState(0)
@@ -16,30 +17,10 @@ const ThumbnailGallery = () => {
 					className='main-thumbnail-img'
 				/>
 			</button>
-			<div className='gallery--thumbnail'>
-				{productImages.map((item) => (
-					<span key={item.id}>
-						<input
-							type='radio'
-							id={`thumbnail-${item.id}`}
-							name='thumbnails'
-							value={item.id}
-							checked={thumbnailIndex === item.id}
-							onChange={(e) =>
-								setThumbnailIndex(parseInt(e.target.value))
-							}
-							className={`thumbnail-btn-${item.id}`}
-						/>
-						<label htmlFor={`thumbnail-${item.id}`}>
-							<img
-								src={item.src}
-								alt={item.alt}
-								className='thumbnail-img'
-							/>
-						</label>
-					</span>
-				))}
-			</div>
+			<Thumbnails
+				thumbnailIndex={thumbnailIndex}
+				setThumbnailIndex={setThumbnailIndex}
+			/>
 		</div>
 	)
 }
