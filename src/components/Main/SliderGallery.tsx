@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useSmallScreen } from '../../hooks/useSmallScreen'
 import productImages from './data/productImages'
 import './styles/SliderGallery.scss'
 
 const SliderGallery = () => {
 	const [index, setIndex] = useState(0)
+	const smallScreen = useSmallScreen()
 
 	const nextIndex = () => {
 		index < productImages.length - 1
@@ -17,7 +19,13 @@ const SliderGallery = () => {
 	}
 	return (
 		<div className='gallery--slider'>
-			<button className='btn-previous'>
+			<button
+				className={
+					smallScreen
+						? 'btn-previous sm-screen-btn sm-screen-btn-previous'
+						: 'btn-previous lg-screen-btn lg-screen-btn-previous'
+				}
+			>
 				<svg
 					width='12'
 					height='18'
@@ -40,9 +48,19 @@ const SliderGallery = () => {
 			<img
 				src={productImages[index].src}
 				alt={productImages[index].alt}
-				className='slider-img'
+				className={
+					smallScreen
+						? 'slider-img sm-screen-img'
+						: 'slider-img lg-screen-img'
+				}
 			/>
-			<button className='btn-next'>
+			<button
+				className={
+					smallScreen
+						? 'btn-next sm-screen-btn sm-screen-btn-next'
+						: 'btn-next lg-screen-btn lg-screen-btn-next'
+				}
+			>
 				<svg
 					width='13'
 					height='18'

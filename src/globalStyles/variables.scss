@@ -29,11 +29,13 @@ $black-semi: rgba(0, 0, 0, 0.5);
 // Change also breakpoint size in useSmallScreen hook
 $small-screen: 800px;
 
-// layout
+// components
 
 $small-screen-header-height: 60px;
 $small-screen-img-height: 340px;
 
 $big-screen-margin: 6rem;
 $big-screen-header-height: 100px;
-$big-screen-img-width: 400px;
+$big-screen-img-height: 428px;
+
+$btn-size: 46px;
