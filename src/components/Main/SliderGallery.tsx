@@ -37,7 +37,6 @@ const SliderGallery = () => {
 					<title id='btn-img-previous'>Left pointing arrow</title>
 					<path
 						d='M11 1 3 9l8 8'
-						stroke='#1D2026'
 						strokeWidth='3'
 						fill='none'
 						fillRule='evenodd'
@@ -72,7 +71,6 @@ const SliderGallery = () => {
 					<title id='btn-img-next'>Right pointing arrow</title>
 					<path
 						d='m2 1 8 8-8 8'
-						stroke='#1D2026'
 						strokeWidth='3'
 						fill='none'
 						fillRule='evenodd'

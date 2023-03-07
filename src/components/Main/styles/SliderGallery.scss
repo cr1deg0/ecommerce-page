@@ -30,6 +30,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	cursor: pointer;
+	svg {
+		stroke: $neutral-500;
+	}
 }
 .btn-previous {
 	svg {
@@ -39,6 +43,12 @@
 .btn-next {
 	svg {
 		margin-right: -4px;
+	}
+}
+.btn-previous:hover,
+.btn-next:hover {
+	svg {
+		stroke: $primary-300;
 	}
 }
 .sm-screen-btn {
