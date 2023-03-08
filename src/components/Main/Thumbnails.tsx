@@ -25,11 +25,13 @@ const Thumbnails = ({
 						className={`thumbnail-btn-${item.id}`}
 					/>
 					<label htmlFor={`thumbnail-${item.id}`}>
-						<img
-							src={item.src}
-							alt={item.alt}
-							className='thumbnail-img'
-						/>
+						<span>
+							<img
+								src={item.src}
+								alt={item.alt}
+								className='thumbnail-img'
+							/>
+						</span>
 					</label>
 				</span>
 			))}
