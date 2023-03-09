@@ -1,9 +1,14 @@
+import { useEffect, useState } from 'react'
 import { useLightboxToggle } from '../../context/LightboxToggleContext'
 import SliderGallery from '../Main/SliderGallery'
+import Thumbnails from '../Main/Thumbnails'
 import './styles/Lightbox.scss'
 
 const Lightbox = () => {
+	const [imgIndex, setImgIndex] = useState(0)
+	// const [index, setIndex] = useState(0)
 	const { setToggleLightbox } = useLightboxToggle()
+
 	return (
 		<div className='lightbox-container'>
 			<button
@@ -20,13 +25,24 @@ const Lightbox = () => {
 					<title id='close-icon'>X icon</title>
 					<path
 						d='m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z'
-						fill='#69707D'
 						fillRule='evenodd'
 					/>
 				</svg>
 			</button>
 			<div className='lightbox-slider'>
-				<SliderGallery />
+				<SliderGallery
+					galleryIndex={imgIndex}
+					setGalleryIndex={setImgIndex}
+				/>
+			</div>
+			<div className='lightbox-thumbnails'>
+				<span>
+					<Thumbnails
+						name={'lightbox-thumbnails'}
+						thumbnailIndex={imgIndex}
+						setThumbnailIndex={setImgIndex}
+					/>
+				</span>
 			</div>
 		</div>
 	)

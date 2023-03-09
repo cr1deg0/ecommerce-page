@@ -3,19 +3,26 @@ import { useSmallScreen } from '../../hooks/useSmallScreen'
 import productImages from './data/productImages'
 import './styles/SliderGallery.scss'
 
-const SliderGallery = () => {
-	const [index, setIndex] = useState(0)
+type PropsType = {
+	galleryIndex: number
+	setGalleryIndex: React.Dispatch<React.SetStateAction<number>>
+}
+const SliderGallery = ({
+	galleryIndex,
+	setGalleryIndex,
+}: PropsType) => {
+	// const [index, setIndex] = useState(0)
 	const smallScreen = useSmallScreen()
 
 	const nextIndex = () => {
-		index < productImages.length - 1
-			? setIndex((prev) => prev + 1)
-			: setIndex(0)
+		galleryIndex < productImages.length - 1
+			? setGalleryIndex((prev) => prev + 1)
+			: setGalleryIndex(0)
 	}
 	const prevIndex = () => {
-		index > 0
-			? setIndex((prev) => prev - 1)
-			: setIndex(productImages.length - 1)
+		galleryIndex > 0
+			? setGalleryIndex((prev) => prev - 1)
+			: setGalleryIndex(productImages.length - 1)
 	}
 	return (
 		<div className='gallery--slider'>
@@ -45,8 +52,8 @@ const SliderGallery = () => {
 			</button>
 
 			<img
-				src={productImages[index].src}
-				alt={productImages[index].alt}
+				src={productImages[galleryIndex].src}
+				alt={productImages[galleryIndex].alt}
 				className={
 					smallScreen
 						? 'slider-img sm-screen-img'
