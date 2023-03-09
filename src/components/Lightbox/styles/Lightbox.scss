@@ -5,7 +5,7 @@
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
-	background-color: $black-semi;
+	background-color: $black-semidark;
 	@include flex-center;
 	justify-content: center;
 	display: grid;
@@ -23,6 +23,10 @@
 	border: none;
 	background-color: transparent;
 	grid-area: closebtn;
+	justify-self: end;
+	margin-bottom: 1rem;
+	scale: 1.2;
+	fill: $white;
 }
 .lightbox-slider {
 	grid-area: slider;
