@@ -2,10 +2,12 @@ import productImages from './data/productImages'
 import './styles/Thumbnails.scss'
 
 type PropsType = {
+	name: string
 	thumbnailIndex: number
 	setThumbnailIndex: React.Dispatch<React.SetStateAction<number>>
 }
 const Thumbnails = ({
+	name,
 	thumbnailIndex,
 	setThumbnailIndex,
 }: PropsType) => {
@@ -16,12 +18,13 @@ const Thumbnails = ({
 					<input
 						type='radio'
 						id={`thumbnail-${item.id}`}
-						name='thumbnails'
+						name={name}
 						value={item.id}
 						checked={thumbnailIndex === item.id}
-						onChange={(e) =>
+						onChange={(e) => {
+							console.log('clicked')
 							setThumbnailIndex(parseInt(e.target.value))
-						}
+						}}
 						className={`thumbnail-btn-${item.id}`}
 					/>
 					<label htmlFor={`thumbnail-${item.id}`}>

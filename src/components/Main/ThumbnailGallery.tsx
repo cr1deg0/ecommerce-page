@@ -18,6 +18,7 @@ const ThumbnailGallery = () => {
 				/>
 			</button>
 			<Thumbnails
+				name={'gallery-thumbnails'}
 				thumbnailIndex={thumbnailIndex}
 				setThumbnailIndex={setThumbnailIndex}
 			/>
