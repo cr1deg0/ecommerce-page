@@ -1,0 +1,30 @@
+@import '../../../globalStyles/variables.scss';
+@import '../../../globalStyles/mixins.scss';
+
+.cart {
+	position: absolute;
+	width: $cart-width;
+	height: 300px;
+	z-index: 100;
+	background-color: $white;
+	margin-left: calc((100vw - $cart-width) / 2);
+	top: calc($small-screen-header-height + 0.5rem);
+	border-radius: 12px;
+	display: grid;
+	grid-template-rows: min-content auto;
+
+	h3 {
+		padding: 1.6rem;
+		border-bottom: 1px solid $neutral-300;
+	}
+	div {
+		padding: 1.6rem;
+		justify-self: center;
+		align-self: center;
+		p {
+			color: $neutral-500;
+			font-weight: $font-medium;
+			justify-self: center;
+		}
+	}
+}
