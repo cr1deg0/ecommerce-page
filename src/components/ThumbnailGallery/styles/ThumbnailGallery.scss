@@ -2,9 +2,10 @@
 @import '../../../globalStyles/mixins.scss';
 
 .gallery--thumbnail-main {
-	padding-inline: 3rem;
 	display: flex;
 	flex-direction: column;
+	max-width: $big-screen-max-width;
+	justify-self: center;
 
 	button {
 		border: none;
@@ -15,7 +16,6 @@
 }
 .main-thumbnail-img {
 	border-radius: 12px;
-	max-width: 400px;
-	min-width: 400px;
+	max-width: $big-screen-max-width;
 	max-height: 100%;
 }

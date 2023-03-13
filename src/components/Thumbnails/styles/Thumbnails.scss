@@ -10,17 +10,10 @@
 		label {
 			cursor: pointer;
 		}
-		// label:hover {
-		// 	img {
-		// 		opacity: 50%;
-		// 		background-color: $white;
-		// 	}
-		// }
 		input[type='radio'] {
 			position: absolute;
 			top: 30px;
 			left: 30px;
-			opacity: 0;
 		}
 		input[type='radio']:checked + label,
 		input[type='radio']:hover + label {
@@ -36,6 +29,16 @@
 		input[type='radio']:checked + label {
 			span {
 				border: 2.5px solid $primary-300;
+			}
+		}
+		input[type='radio']:focus-visible {
+			outline: 2px solid blue;
+			outline-offset: 37px;
+		}
+		@supports not selector(:focus-visible) {
+			input[type='radio']:focus {
+				outline: 3px solid blue;
+				outline-offset: 3px;
 			}
 		}
 	}

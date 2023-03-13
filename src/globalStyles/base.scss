@@ -26,15 +26,19 @@ a {
 	outline-offset: 0.4rem;
 }
 
+button {
+	border: none;
+}
 .main-section {
 	@include flex-center;
 	flex-direction: column;
-	border: 1px solid blue;
 }
 
 @media (min-width: $small-screen) {
 	.main-section {
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
 		min-height: calc(100vh - $big-screen-header-height);
 		margin-inline: $big-screen-margin;
 	}

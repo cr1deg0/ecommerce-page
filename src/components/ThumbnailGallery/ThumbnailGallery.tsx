@@ -7,7 +7,7 @@ import Thumbnails from '../Thumbnails/Thumbnails'
 const ThumbnailGallery = () => {
 	const [thumbnailIndex, setThumbnailIndex] = useState(0)
 	const { setToggleLightbox } = useLightboxToggle()
-	const productImages = productData.images
+	const productImages = productData[0].images
 
 	return (
 		<div className='gallery--thumbnail-main'>
@@ -18,11 +18,13 @@ const ThumbnailGallery = () => {
 					className='main-thumbnail-img'
 				/>
 			</button>
-			<Thumbnails
-				name={'gallery-thumbnails'}
-				thumbnailIndex={thumbnailIndex}
-				setThumbnailIndex={setThumbnailIndex}
-			/>
+			<span>
+				<Thumbnails
+					name={'gallery-thumbnails'}
+					thumbnailIndex={thumbnailIndex}
+					setThumbnailIndex={setThumbnailIndex}
+				/>
+			</span>
 		</div>
 	)
 }

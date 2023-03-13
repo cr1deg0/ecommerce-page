@@ -11,7 +11,7 @@ const Thumbnails = ({
 	thumbnailIndex,
 	setThumbnailIndex,
 }: PropsType) => {
-	const productImages = productData.images
+	const productImages = productData[0].images
 	return (
 		<div className='thumbnails'>
 			{productImages.map((item) => (

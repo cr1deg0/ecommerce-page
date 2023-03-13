@@ -7,9 +7,13 @@
 		border: none;
 	}
 }
+// .back-position {
+// 	z-index: -1;
+// }
 .slider-img {
 	display: block;
 	object-fit: cover;
+	object-position: top;
 }
 .sm-screen-img {
 	width: 100vw;

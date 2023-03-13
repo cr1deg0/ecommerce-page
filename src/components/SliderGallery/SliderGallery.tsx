@@ -10,9 +10,8 @@ const SliderGallery = ({
 	galleryIndex,
 	setGalleryIndex,
 }: PropsType) => {
-	// const [index, setIndex] = useState(0)
 	const smallScreen = useSmallScreen()
-	const productImages = productData.images
+	const productImages = productData[0].images
 
 	const nextIndex = () => {
 		galleryIndex < productImages.length - 1
@@ -50,7 +49,6 @@ const SliderGallery = ({
 					/>
 				</svg>
 			</button>
-
 			<img
 				src={productImages[galleryIndex].src}
 				alt={productImages[galleryIndex].alt}

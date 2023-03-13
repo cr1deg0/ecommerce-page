@@ -8,7 +8,12 @@ $font-regular: 400;
 $font-medium: 500;
 $font-bold: 700;
 
-$fs-300: 1rem;
+$fs-300: 0.6rem;
+$fs-400: 0.8rem;
+$fs-500: 1rem;
+$fs-600: 1.3rem;
+$fs-700: 1.6rem;
+$fs-800: 1.8rem;
 
 // Colors
 
@@ -32,11 +37,13 @@ $small-screen: 800px;
 
 // components
 
+$small-screen-margin: 1.5rem;
 $small-screen-header-height: 60px;
 $small-screen-img-height: 340px;
 
 $big-screen-margin: 6rem;
 $big-screen-header-height: 100px;
 $big-screen-img-height: 428px;
+$big-screen-max-width: 400px;
 
 $btn-size: 46px;

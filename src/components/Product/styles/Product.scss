@@ -1,0 +1,135 @@
+@import '../../../globalStyles/variables.scss';
+@import '../../../globalStyles/mixins.scss';
+
+.product-container {
+	padding: $small-screen-margin;
+	max-width: 500px;
+}
+.product-description {
+	h1 {
+		color: $primary-300;
+		font-size: $fs-400;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+	}
+	h2 {
+		font-size: $fs-700;
+		margin-bottom: 1rem;
+	}
+	p {
+		color: $neutral-400;
+		margin-bottom: 1rem;
+		line-height: 1.4rem;
+	}
+}
+
+@media (min-width: $small-screen) {
+	.product-description {
+		h1 {
+			font-size: $fs-300;
+		}
+		h2 {
+			font-size: $fs-800;
+			margin-bottom: 1.6rem;
+		}
+		p {
+			font-size: $fs-400;
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+.product-price {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1.8rem;
+	p {
+		font-size: $fs-700;
+		color: $black;
+		font-weight: $font-bold;
+		display: flex;
+		align-items: center;
+		span {
+			margin-left: 0.8rem;
+			font-size: $fs-500;
+			color: $primary-300;
+			background: $primary-100;
+			height: 80%;
+			padding: 0.1rem 0.5rem;
+			border-radius: 5px;
+			font-weight: $font-medium;
+		}
+	}
+	.original-price {
+		font-size: $fs-500;
+		color: $neutral-300;
+		text-decoration: line-through;
+		font-weight: $font-medium;
+	}
+}
+@media (min-width: $small-screen) {
+	.product-price {
+		flex-direction: column;
+		p {
+			span {
+				font-size: $fs-400;
+			}
+		}
+		.original-price {
+			font-size: $fs-400;
+		}
+	}
+}
+.product-cart {
+	display: flex;
+	flex-direction: column;
+	.product-qty {
+		@include flex-center;
+		justify-content: space-between;
+		border-radius: 8px;
+		background-color: $neutral-100;
+		padding-inline: 1rem;
+		height: 3rem;
+		margin-bottom: 1rem;
+		button {
+			@include flex-center;
+			background-color: inherit;
+			svg {
+				fill: $primary-300;
+			}
+		}
+		span {
+			font-weight: $font-bold;
+		}
+	}
+	.add-cart {
+		background-color: $primary-300;
+		color: $primary-100;
+		font-weight: $font-bold;
+		@include flex-center;
+		justify-content: center;
+		border-radius: 8px;
+		height: 3rem;
+		letter-spacing: 0.07 rem;
+		box-shadow: 0px 20px 20px $primary-100;
+		svg {
+			fill: $primary-100;
+			scale: 0.8;
+			margin-inline: 0.8rem;
+		}
+	}
+}
+
+@media (min-width: $small-screen) {
+	.product-cart {
+		flex-direction: row;
+		// justify-content: space-between;
+		gap: 1rem;
+		.product-qty {
+			flex-grow: 1;
+		}
+		.add-cart {
+			flex-grow: 2;
+		}
+	}
+}
