@@ -88,15 +88,29 @@
 		justify-content: space-between;
 		border-radius: 8px;
 		background-color: $neutral-100;
-		padding-inline: 1rem;
 		height: 3rem;
 		margin-bottom: 1rem;
 		button {
 			@include flex-center;
 			background-color: inherit;
+			padding-inline: 1rem;
+			height: 3rem;
 			svg {
 				fill: $primary-300;
 			}
+		}
+		button:hover,
+		button:focus {
+			background-color: $primary-300;
+			svg {
+				fill: $white;
+			}
+		}
+		.left-btn {
+			border-radius: 8px 0 0 8px;
+		}
+		.right-btn {
+			border-radius: 0 8px 8px 0;
 		}
 		span {
 			font-weight: $font-bold;
@@ -117,6 +131,10 @@
 			scale: 0.8;
 			margin-inline: 0.8rem;
 		}
+	}
+	.add-cart:hover,
+	.add-cart:focus {
+		opacity: 70%;
 	}
 }
 

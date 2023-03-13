@@ -30,7 +30,7 @@ const Product = () => {
 			</div>
 			<div className='product-cart'>
 				<div className='product-qty'>
-					<button>
+					<button className='left-btn'>
 						<svg
 							width='12'
 							height='4'
@@ -43,7 +43,7 @@ const Product = () => {
 						</svg>
 					</button>
 					<span>{0}</span>
-					<button>
+					<button className='right-btn'>
 						<svg
 							width='12'
 							height='12'

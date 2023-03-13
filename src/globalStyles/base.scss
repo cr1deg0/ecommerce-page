@@ -28,6 +28,7 @@ a {
 
 button {
 	border: none;
+	cursor: pointer;
 }
 .main-section {
 	@include flex-center;
