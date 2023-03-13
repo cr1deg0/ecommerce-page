@@ -1,0 +1,28 @@
+@import '../../../globalStyles/variables.scss';
+@import '../../../globalStyles/mixins.scss';
+
+.cart-item {
+	@include flex-center;
+	justify-content: space-between;
+	margin-bottom: 1.6rem;
+	img {
+		max-width: 50px;
+		border-radius: 5px;
+	}
+	.item-data {
+		color: $neutral-400;
+		font-weight: $font-regular;
+		font-size: $fs-500;
+		margin-bottom: 0.2rem;
+	}
+	.bold {
+		color: $neutral-500;
+		font-weight: $font-bold;
+	}
+	button {
+		background-color: inherit;
+		svg {
+			fill: $neutral-300;
+		}
+	}
+}

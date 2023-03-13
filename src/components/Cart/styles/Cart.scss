@@ -4,27 +4,55 @@
 .cart {
 	position: absolute;
 	width: $cart-width;
-	height: 300px;
 	z-index: 100;
 	background-color: $white;
-	margin-left: calc((100vw - $cart-width) / 2);
+	right: calc((100vw - $cart-width) / 2);
 	top: calc($small-screen-header-height + 0.5rem);
 	border-radius: 12px;
 	display: grid;
 	grid-template-rows: min-content auto;
 
-	h3 {
+	.cart-header {
+		@include flex-center;
+		justify-content: space-between;
 		padding: 1.6rem;
 		border-bottom: 1px solid $neutral-300;
+		h3 {
+			font-size: $fs-500;
+		}
+		button {
+			background-color: inherit;
+			fill: $neutral-300;
+		}
+		button:hover,
+		button:focus {
+			fill: $primary-300;
+		}
 	}
-	div {
+
+	.cart-container {
 		padding: 1.6rem;
-		justify-self: center;
-		align-self: center;
-		p {
+		// justify-self: center;
+		// align-self: center;
+		.cart-empty {
 			color: $neutral-500;
 			font-weight: $font-medium;
 			justify-self: center;
 		}
+		.cart-checkout {
+			background-color: $primary-300;
+			color: $primary-100;
+			font-weight: $font-bold;
+			width: 100%;
+			padding-block: 1rem;
+			border-radius: 8px;
+		}
+	}
+}
+@media (min-width: $small-screen) {
+	.cart {
+		right: $big-screen-margin;
+		top: calc($big-screen-header-height - 0.5rem);
+		box-shadow: -5px 8px 20px $neutral-300;
 	}
 }
