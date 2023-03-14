@@ -2,12 +2,15 @@ import React from 'react'
 import './styles/Cart.scss'
 import CartItem from '../CartItem/CartItem'
 
-const Cart = () => {
+type PropsType = {
+	toggleCart: React.Dispatch<React.SetStateAction<boolean>>
+}
+const Cart = ({ toggleCart }: PropsType) => {
 	return (
 		<div className='cart'>
 			<div className='cart-header'>
 				<h3>Cart</h3>
-				<button>
+				<button onClick={() => toggleCart(false)}>
 					<svg
 						width='14'
 						height='15'

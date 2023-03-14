@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { LightboxToggleContext } from './context/LightboxToggleContext'
 import './globalStyles/base.scss'
 import Header from './components/Header/main'
 import SliderGallery from './components/SliderGallery/SliderGallery'
@@ -7,16 +6,16 @@ import ThumbnailGallery from './components/ThumbnailGallery/ThumbnailGallery'
 import Product from './components/Product/Product'
 import Lightbox from './components/Lightbox/Lightbox'
 import { useSmallScreen } from './hooks/useSmallScreen'
+import useLightboxToggle from './hooks/useLightboxToggle'
+import { useProduct } from './hooks/useProduct'
 
 function App() {
 	const [imgIndex, setImgIndex] = useState(0)
-	const [toggleLightbox, setToggleLightbox] = useState(false)
 	const smallScreen = useSmallScreen()
+	const { toggleLightbox, setToggleLightbox } = useLightboxToggle()
 
 	return (
-		<LightboxToggleContext.Provider
-			value={{ toggleLightbox, setToggleLightbox }}
-		>
+		<>
 			{toggleLightbox && !smallScreen && <Lightbox />}
 			<Header />
 			<main className='main-section'>
@@ -30,7 +29,7 @@ function App() {
 				)}
 				<Product />
 			</main>
-		</LightboxToggleContext.Provider>
+		</>
 	)
 }
 

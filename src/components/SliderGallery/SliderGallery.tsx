@@ -1,5 +1,5 @@
+import { useProduct } from '../../hooks/useProduct'
 import { useSmallScreen } from '../../hooks/useSmallScreen'
-import productData from '../../data/productData'
 import './styles/SliderGallery.scss'
 
 type PropsType = {
@@ -11,7 +11,10 @@ const SliderGallery = ({
 	setGalleryIndex,
 }: PropsType) => {
 	const smallScreen = useSmallScreen()
-	const productImages = productData[0].images
+	const product = useProduct()
+	const productImages = product.images
+
+	console.log(productImages)
 
 	const nextIndex = () => {
 		galleryIndex < productImages.length - 1
