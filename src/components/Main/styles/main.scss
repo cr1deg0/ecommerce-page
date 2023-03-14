@@ -1,0 +1,15 @@
+@import '../../../globalStyles/mixins.scss';
+@import '../../../globalStyles/variables.scss';
+.main-section {
+	@include flex-center;
+	flex-direction: column;
+	border: 1px solid blue;
+}
+
+@media (min-width: $small-screen) {
+	.main-section {
+		flex-direction: row;
+		min-height: calc(100vh - $big-screen-header-height);
+		margin-inline: $big-screen-margin;
+	}
+}

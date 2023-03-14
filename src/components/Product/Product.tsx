@@ -1,8 +1,8 @@
-import { useProduct } from '../../hooks/useProduct'
+import productData from '../../data/productData'
 import './styles/Product.scss'
 
 const Product = () => {
-	const product = useProduct()
+	const product = productData[0]
 	return (
 		<div className='product-container'>
 			<div className='product-description'>

@@ -1,0 +1,71 @@
+@import '../../../globalStyles/variables.scss';
+@import '../../../globalStyles/mixins.scss';
+
+.gallery--slider {
+	position: relative;
+	button {
+		border: none;
+	}
+}
+.slider-img {
+	display: block;
+	object-fit: cover;
+}
+.sm-screen-img {
+	width: 100vw;
+	max-height: $small-screen-img-height;
+}
+.lg-screen-img {
+	border-radius: 12px;
+	height: $big-screen-img-height;
+}
+
+.btn-previous,
+.btn-next {
+	position: absolute;
+	background-color: $white;
+	border-radius: 50%;
+	width: $btn-size;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	svg {
+		stroke: $neutral-500;
+	}
+}
+.btn-previous {
+	svg {
+		margin-left: -4px;
+	}
+}
+.btn-next {
+	svg {
+		margin-right: -4px;
+	}
+}
+.btn-previous:hover,
+.btn-next:hover {
+	svg {
+		stroke: $primary-300;
+	}
+}
+.sm-screen-btn {
+	top: calc($small-screen-img-height / 2 - $btn-size / 2);
+}
+.sm-screen-btn-previous {
+	left: 1.2rem;
+}
+.sm-screen-btn-next {
+	right: 1.2rem;
+}
+.lg-screen-btn {
+	top: calc($big-screen-img-height / 2 - $btn-size / 2);
+}
+.lg-screen-btn-previous {
+	left: calc(-1 * $btn-size / 2);
+}
+.lg-screen-btn-next {
+	right: calc($big-screen-header-height/ 2 - 1.5 * $btn-size);
+}

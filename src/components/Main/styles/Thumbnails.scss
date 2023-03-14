@@ -1,0 +1,47 @@
+@import '../../../globalStyles/variables.scss';
+
+.thumbnails {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	span {
+		position: relative;
+		label {
+			cursor: pointer;
+		}
+		// label:hover {
+		// 	img {
+		// 		opacity: 50%;
+		// 		background-color: $white;
+		// 	}
+		// }
+		input[type='radio'] {
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			opacity: 0;
+		}
+		input[type='radio']:checked + label,
+		input[type='radio']:hover + label {
+			span {
+				display: block;
+				border-radius: 10px;
+				background-color: $white;
+			}
+			img {
+				opacity: 50%;
+			}
+		}
+		input[type='radio']:checked + label {
+			span {
+				border: 2.5px solid $primary-300;
+			}
+		}
+	}
+}
+.thumbnail-img {
+	display: block;
+	border-radius: 8px;
+	max-width: 70px;
+}

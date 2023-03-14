@@ -1,4 +1,4 @@
-import productData from '../../data/productData'
+import productImages from './data/productImages'
 import './styles/Thumbnails.scss'
 
 type PropsType = {
@@ -11,7 +11,6 @@ const Thumbnails = ({
 	thumbnailIndex,
 	setThumbnailIndex,
 }: PropsType) => {
-	const productImages = productData[0].images
 	return (
 		<div className='thumbnails'>
 			{productImages.map((item) => (

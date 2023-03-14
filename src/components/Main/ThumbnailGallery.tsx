@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { useLightboxToggle } from '../../context/LightboxToggleContext'
-import productData from '../../data/productData'
+import productImages from './data/productImages'
 import './styles/ThumbnailGallery.scss'
-import Thumbnails from '../Thumbnails/Thumbnails'
+import Thumbnails from './Thumbnails'
 
 const ThumbnailGallery = () => {
 	const [thumbnailIndex, setThumbnailIndex] = useState(0)
 	const { setToggleLightbox } = useLightboxToggle()
-	const productImages = productData[0].images
 
 	return (
 		<div className='gallery--thumbnail-main'>
@@ -18,13 +17,11 @@ const ThumbnailGallery = () => {
 					className='main-thumbnail-img'
 				/>
 			</button>
-			<span>
-				<Thumbnails
-					name={'gallery-thumbnails'}
-					thumbnailIndex={thumbnailIndex}
-					setThumbnailIndex={setThumbnailIndex}
-				/>
-			</span>
+			<Thumbnails
+				name={'gallery-thumbnails'}
+				thumbnailIndex={thumbnailIndex}
+				setThumbnailIndex={setThumbnailIndex}
+			/>
 		</div>
 	)
 }

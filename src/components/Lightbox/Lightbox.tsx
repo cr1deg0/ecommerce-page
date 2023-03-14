@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import useLightboxToggle from '../../hooks/useLightboxToggle'
+import { useLightboxToggle } from '../../context/LightboxToggleContext'
 import SliderGallery from '../SliderGallery/SliderGallery'
 import Thumbnails from '../Thumbnails/Thumbnails'
 import './styles/Lightbox.scss'
 
 const Lightbox = () => {
 	const [imgIndex, setImgIndex] = useState(0)
-	const { toggleLightbox, setToggleLightbox } = useLightboxToggle()
+	const { setToggleLightbox } = useLightboxToggle()
 
 	return (
 		<div className='lightbox-container'>

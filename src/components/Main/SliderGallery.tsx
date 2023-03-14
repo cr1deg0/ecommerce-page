@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { useSmallScreen } from '../../hooks/useSmallScreen'
-import productData from '../../data/productData'
+import productImages from './data/productImages'
 import './styles/SliderGallery.scss'
 
 type PropsType = {
@@ -10,8 +11,8 @@ const SliderGallery = ({
 	galleryIndex,
 	setGalleryIndex,
 }: PropsType) => {
+	// const [index, setIndex] = useState(0)
 	const smallScreen = useSmallScreen()
-	const productImages = productData[0].images
 
 	const nextIndex = () => {
 		galleryIndex < productImages.length - 1
@@ -49,6 +50,7 @@ const SliderGallery = ({
 					/>
 				</svg>
 			</button>
+
 			<img
 				src={productImages[galleryIndex].src}
 				alt={productImages[galleryIndex].alt}
