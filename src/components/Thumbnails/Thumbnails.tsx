@@ -1,4 +1,4 @@
-import productData from '../../data/productData'
+import { useProduct } from '../../hooks/useProduct'
 import './styles/Thumbnails.scss'
 
 type PropsType = {
@@ -11,7 +11,8 @@ const Thumbnails = ({
 	thumbnailIndex,
 	setThumbnailIndex,
 }: PropsType) => {
-	const productImages = productData[0].images
+	const product = useProduct()
+	const productImages = product.images
 	return (
 		<div className='thumbnails'>
 			{productImages.map((item) => (
@@ -23,7 +24,6 @@ const Thumbnails = ({
 						value={item.id}
 						checked={thumbnailIndex === item.id}
 						onChange={(e) => {
-							console.log('clicked')
 							setThumbnailIndex(parseInt(e.target.value))
 						}}
 						className={`thumbnail-btn-${item.id}`}
