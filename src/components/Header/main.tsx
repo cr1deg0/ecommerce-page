@@ -8,6 +8,7 @@ import Cart from '../Cart/Cart'
 const Header = () => {
 	const smallScreen = useSmallScreen()
 	const [menuOpen, setMenuOpen] = useState(false)
+	const [toggleCart, setToggleCart] = useState(false)
 
 	useEffect(() => {
 		if (!smallScreen) {
@@ -34,7 +35,7 @@ const Header = () => {
 						<NavBar menuOpen={menuOpen} />
 					</div>
 					<div className='header--right'>
-						<button>
+						<button onClick={() => setToggleCart(true)}>
 							<img src='./images/icon-cart.svg' alt='Shopping cart' />
 						</button>
 						<a href='/#' aria-label='Access your account data'>
@@ -46,7 +47,7 @@ const Header = () => {
 					</div>
 				</div>
 			</header>
-			<Cart />
+			{toggleCart && <Cart setToggleCart={setToggleCart} />}
 		</>
 	)
 }
