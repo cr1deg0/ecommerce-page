@@ -20,7 +20,7 @@ function App() {
 			{product.sku && lighboxState && !smallScreen && <Lightbox />}
 			<Header />
 			{product.sku ? (
-				<main className='main-section'>
+				<main className='main-section' id='main-section'>
 					{smallScreen ? (
 						<SliderGallery
 							galleryIndex={imgIndex}
