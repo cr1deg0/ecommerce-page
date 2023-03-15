@@ -31,15 +31,40 @@
 
 .header--right {
 	@include flex-center;
+
 	button {
 		border: none;
 		background-color: $white;
 		margin-right: 2.5rem;
 		cursor: pointer;
+		position: relative;
+		svg {
+			fill: $neutral-400;
+		}
+		svg:hover,
+		svg:focus {
+			fill: $neutral-500;
+		}
+		span {
+			background-color: $primary-300;
+			color: $primary-100;
+			font-size: $fs-300;
+			font-weight: $font-bold;
+			padding-inline: 0.4rem;
+			border-radius: 25px;
+			position: absolute;
+			top: -5px;
+			right: -5px;
+		}
 	}
+
 	a {
 		img {
 			max-width: 46px;
+		}
+		img:hover {
+			outline: 2px solid $primary-300;
+			border-radius: 50%;
 		}
 	}
 }
