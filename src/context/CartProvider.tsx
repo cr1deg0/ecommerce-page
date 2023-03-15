@@ -1,7 +1,7 @@
-import React, { Children, ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { createContext, useMemo, useReducer } from 'react'
 
-type CartItemType = {
+export type CartItemType = {
 	sku: string
 	name: string
 	price: number
@@ -15,7 +15,6 @@ const initCartState: CartStateType = { cart: [] }
 const REDUCER_ACTION_TYPE = {
 	ADD: 'ADD',
 	REMOVE: 'REMOVE',
-	QTY: 'QTY',
 	SUBMIT: 'SUBMIT',
 }
 
@@ -56,8 +55,6 @@ const reducer = (
 				(item) => item.sku !== sku
 			)
 			return { ...state, cart: [...filteredCart] }
-		}
-		case REDUCER_ACTION_TYPE.QTY: {
 		}
 		case REDUCER_ACTION_TYPE.SUBMIT: {
 			return { ...state, cart: [] }
