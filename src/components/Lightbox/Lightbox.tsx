@@ -7,9 +7,13 @@ import './styles/Lightbox.scss'
 const Lightbox = () => {
 	const [imgIndex, setImgIndex] = useState(0)
 	const lightboxToggler = useLightboxToggler()
-	const closeBtnRef = useRef(null)
+	const closeBtnRef = useRef<HTMLButtonElement>(null)
 
-	useEffect(() => closeBtnRef.current.focus(), [])
+	useEffect(() => {
+		if (closeBtnRef.current) {
+			closeBtnRef.current.focus()
+		}
+	}, [])
 
 	return (
 		<div className='lightbox-container'>
