@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { LightboxToggleContext } from './context/LightboxToggleContext'
+import { useContext, useState } from 'react'
 import './globalStyles/base.scss'
 import Header from './components/Header/main'
 import SliderGallery from './components/SliderGallery/SliderGallery'
@@ -7,30 +6,37 @@ import ThumbnailGallery from './components/ThumbnailGallery/ThumbnailGallery'
 import Product from './components/Product/Product'
 import Lightbox from './components/Lightbox/Lightbox'
 import { useSmallScreen } from './hooks/useSmallScreen'
+import { useLightboxState } from './hooks/useLightbox'
+import { useProduct } from './hooks/useProduct'
 
 function App() {
 	const [imgIndex, setImgIndex] = useState(0)
-	const [toggleLightbox, setToggleLightbox] = useState(false)
 	const smallScreen = useSmallScreen()
+	const product = useProduct()
+	const lighboxState = useLightboxState()
 
 	return (
-		<LightboxToggleContext.Provider
-			value={{ toggleLightbox, setToggleLightbox }}
-		>
-			{toggleLightbox && !smallScreen && <Lightbox />}
+		<>
+			{product.sku && lighboxState && !smallScreen && <Lightbox />}
 			<Header />
-			<main className='main-section'>
-				{smallScreen ? (
-					<SliderGallery
-						galleryIndex={imgIndex}
-						setGalleryIndex={setImgIndex}
-					/>
-				) : (
-					<ThumbnailGallery />
-				)}
-				<Product />
-			</main>
-		</LightboxToggleContext.Provider>
+			{product.sku ? (
+				<main className='main-section'>
+					{smallScreen ? (
+						<SliderGallery
+							galleryIndex={imgIndex}
+							setGalleryIndex={setImgIndex}
+						/>
+					) : (
+						<ThumbnailGallery />
+					)}
+					<Product />
+				</main>
+			) : (
+				<main>
+					<p>Loading ...</p>
+				</main>
+			)}
+		</>
 	)
 }
 

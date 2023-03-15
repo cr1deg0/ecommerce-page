@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
-import { useLightboxToggle } from '../../context/LightboxToggleContext'
+import { useLightboxToggler } from '../../hooks/useLightbox'
 import SliderGallery from '../SliderGallery/SliderGallery'
 import Thumbnails from '../Thumbnails/Thumbnails'
 import './styles/Lightbox.scss'
 
 const Lightbox = () => {
 	const [imgIndex, setImgIndex] = useState(0)
-	const { setToggleLightbox } = useLightboxToggle()
+	const lightboxToggler = useLightboxToggler()
 
 	return (
 		<div className='lightbox-container'>
 			<button
 				className='btn-close'
-				onClick={() => setToggleLightbox(false)}
+				onClick={() => lightboxToggler(false)}
 			>
 				<svg
 					width='14'

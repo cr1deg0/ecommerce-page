@@ -1,8 +1,8 @@
 import { useState, createContext, ReactElement } from 'react'
 
 export interface LightboxToogleContextType {
-	toggleLightbox: boolean
-	setToggleLightbox: React.Dispatch<React.SetStateAction<boolean>>
+	lightboxToggle: boolean
+	setLightboxToggle: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const LightboxContext =
@@ -14,10 +14,10 @@ export const LightboxContext =
 type ChildrenType = { children: ReactElement | ReactElement[] }
 
 const LightboxProvider = ({ children }: ChildrenType) => {
-	const [toggleLightbox, setToggleLightbox] = useState(false)
+	const [lightboxToggle, setLightboxToggle] = useState(false)
 	return (
 		<LightboxContext.Provider
-			value={{ toggleLightbox, setToggleLightbox }}
+			value={{ lightboxToggle, setLightboxToggle }}
 		>
 			{children}
 		</LightboxContext.Provider>

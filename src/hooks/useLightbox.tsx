@@ -1,24 +1,26 @@
 import { useContext } from 'react'
-import {
-	LightboxStateContext,
-	LightboxToggleContext,
-} from '../context/LightboxProvider'
+import { LightboxContext } from '../context/LightboxProvider'
 
 export const useLightboxState = () => {
-	const lightboxState = useContext(LightboxStateContext)
-	if (!lightboxState) {
+	const currentLightboxToggleContext = useContext(LightboxContext)
+	if (!currentLightboxToggleContext) {
 		throw new Error(
 			'useLightboxToggle needs to be used within <LightboxToogleContext.Provider>'
 		)
 	}
-	return lightboxState
-}
-export const useLightboxToggle = () => {
-	const lightboxToggle = useContext(LightboxToggleContext)
-	if (!lightboxToggle) {
-		throw new Error(
-			'useLightboxToggle needs to be used within <LightboxToogleContext.Provider>'
-		)
-	}
+	const { lightboxToggle, setLightboxToggle } =
+		currentLightboxToggleContext
 	return lightboxToggle
+}
+
+export const useLightboxToggler = () => {
+	const currentLightboxToggleContext = useContext(LightboxContext)
+	if (!currentLightboxToggleContext) {
+		throw new Error(
+			'useLightboxToggle needs to be used within <LightboxToogleContext.Provider>'
+		)
+	}
+	const { lightboxToggle, setLightboxToggle } =
+		currentLightboxToggleContext
+	return setLightboxToggle
 }

@@ -1,17 +1,18 @@
 import { useState } from 'react'
-import { useLightboxToggle } from '../../context/LightboxToggleContext'
-import productData from '../../data/productData'
+import { useLightboxToggler } from '../../hooks/useLightbox'
 import './styles/ThumbnailGallery.scss'
 import Thumbnails from '../Thumbnails/Thumbnails'
+import { useProduct } from '../../hooks/useProduct'
 
 const ThumbnailGallery = () => {
 	const [thumbnailIndex, setThumbnailIndex] = useState(0)
-	const { setToggleLightbox } = useLightboxToggle()
-	const productImages = productData[0].images
+	const lightboxToggler = useLightboxToggler()
+	const product = useProduct()
+	const productImages = product.images
 
 	return (
 		<div className='gallery--thumbnail-main'>
-			<button onClick={() => setToggleLightbox(true)}>
+			<button onClick={() => lightboxToggler(true)}>
 				<img
 					src={productImages[thumbnailIndex].src}
 					alt={productImages[thumbnailIndex].alt}
