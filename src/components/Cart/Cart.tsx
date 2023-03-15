@@ -1,10 +1,25 @@
 import './styles/Cart.scss'
 import CartItem from '../CartItem/CartItem'
+import useCart from '../../hooks/useCart'
 
 type PropsType = {
 	setToggleCart: React.Dispatch<React.SetStateAction<boolean>>
 }
 const Cart = ({ setToggleCart }: PropsType) => {
+	const { totalItems, cart } = useCart()
+
+	const cartContent = () => {
+		return totalItems === 0 ? (
+			<p className='cart-empty'>Your cart is empty.</p>
+		) : (
+			<>
+				{cart.map((item, index) => (
+					<CartItem key={index} index={index} />
+				))}
+				<button className='cart-checkout'>Checkout</button>
+			</>
+		)
+	}
 	return (
 		<div className='cart'>
 			<div className='cart-header'>
@@ -24,11 +39,7 @@ const Cart = ({ setToggleCart }: PropsType) => {
 					</svg>
 				</button>
 			</div>
-			<div className='cart-container'>
-				{/* <p className='cart-empty'>Your cart is empty.</p> */}
-				<CartItem />
-				<button className='cart-checkout'>Checkout</button>
-			</div>
+			<div className='cart-container'>{cartContent()}</div>
 		</div>
 	)
 }

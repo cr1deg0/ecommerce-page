@@ -1,8 +1,35 @@
-import productData from '../../data/productData'
+import { useState } from 'react'
+import useCart from '../../hooks/useCart'
+import useFormatPrice from '../../hooks/useFormatPrice'
+import { useProduct } from '../../hooks/useProduct'
 import './styles/Product.scss'
 
 const Product = () => {
-	const product = productData[0]
+	const product = useProduct()
+	const [qty, setQty] = useState(1)
+	const { dispatch, REDUCER_ACTIONS } = useCart()
+
+	const decreaseQty = () => {
+		if (qty !== 1) {
+			setQty((prev) => prev - 1)
+		}
+	}
+
+	const addProduct = () => {
+		dispatch({
+			type: REDUCER_ACTIONS.ADD,
+			payload: {
+				sku: product.sku,
+				name: product.name,
+				price:
+					product.discount === 0
+						? product.price
+						: (product.price * product.discount) / 100,
+				qty,
+			},
+		})
+	}
+
 	return (
 		<div className='product-container'>
 			<div className='product-description'>
@@ -11,18 +38,15 @@ const Product = () => {
 				<p>{product.description}</p>
 			</div>
 			<div className='product-price'>
-				{parseInt(product.discount) > 0 ? (
+				{product.discount > 0 ? (
 					<>
 						<p>
-							$
-							{(
-								(parseInt(product.price) *
-									parseInt(product.discount)) /
-								100
-							).toFixed(2)}
+							{useFormatPrice(product.price, product.discount)}
 							<span>{product.discount}%</span>
 						</p>
-						<p className='original-price'>${product.price}</p>
+						<p className='original-price'>
+							{useFormatPrice(product.price)}
+						</p>
 					</>
 				) : (
 					<p>${product.price}</p>
@@ -30,7 +54,7 @@ const Product = () => {
 			</div>
 			<div className='product-cart'>
 				<div className='product-qty'>
-					<button className='left-btn'>
+					<button className='left-btn' onClick={() => decreaseQty()}>
 						<svg
 							width='12'
 							height='4'
@@ -42,8 +66,11 @@ const Product = () => {
 							/>
 						</svg>
 					</button>
-					<span>{0}</span>
-					<button className='right-btn'>
+					<span>{qty}</span>
+					<button
+						className='right-btn'
+						onClick={() => setQty((prev) => prev + 1)}
+					>
 						<svg
 							width='12'
 							height='12'
@@ -56,7 +83,7 @@ const Product = () => {
 						</svg>
 					</button>
 				</div>
-				<button className='add-cart'>
+				<button className='add-cart' onClick={() => addProduct()}>
 					<span>
 						<svg
 							width='22'
