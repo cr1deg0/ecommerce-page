@@ -41,11 +41,12 @@ $small-screen: 800px;
 $small-screen-margin: 1.5rem;
 $small-screen-header-height: 60px;
 $small-screen-img-height: 340px;
+$small-screen-cart-width: calc(100vw - 1rem);
 
 $big-screen-margin: 6rem;
 $big-screen-header-height: 100px;
 $big-screen-img-height: 428px;
 $big-screen-max-width: 400px;
+$big-screen-cart-width: 400px;
 
-$cart-width: 360px;
 $btn-size: 46px;

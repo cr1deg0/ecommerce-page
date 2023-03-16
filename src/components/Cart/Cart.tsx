@@ -12,12 +12,12 @@ const Cart = ({ setToggleCart }: PropsType) => {
 		return totalItems === 0 ? (
 			<p className='cart-empty'>Your cart is empty.</p>
 		) : (
-			<>
+			<span className='cart-full'>
 				{cart.map((item, index) => (
 					<CartItem key={index} index={index} />
 				))}
 				<button className='cart-checkout'>Checkout</button>
-			</>
+			</span>
 		)
 	}
 	return (

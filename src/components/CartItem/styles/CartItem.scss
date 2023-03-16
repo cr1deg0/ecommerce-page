@@ -2,8 +2,9 @@
 @import '../../../globalStyles/mixins.scss';
 
 .cart-item {
-	@include flex-center;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: min-content 1fr min-content;
+	gap: 1rem;
 	margin-bottom: 1.6rem;
 	img {
 		max-width: 50px;

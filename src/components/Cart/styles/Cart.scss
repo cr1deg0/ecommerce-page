@@ -3,10 +3,11 @@
 
 .cart {
 	position: absolute;
-	width: $cart-width;
+	width: $small-screen-cart-width;
+	min-height: 280px;
 	z-index: 100;
 	background-color: $white;
-	right: calc((100vw - $cart-width) / 2);
+	right: calc((100vw - $small-screen-cart-width) / 2);
 	top: calc($small-screen-header-height + 0.5rem);
 	border-radius: 12px;
 	display: grid;
@@ -32,12 +33,14 @@
 
 	.cart-container {
 		padding: 1.6rem;
-		// justify-self: center;
-		// align-self: center;
+		@include flex-center;
+		justify-content: center;
 		.cart-empty {
-			color: $neutral-500;
+			color: $neutral-400;
 			font-weight: $font-medium;
-			justify-self: center;
+		}
+		.cart-full {
+			width: 100%;
 		}
 		.cart-checkout {
 			background-color: $primary-300;
@@ -51,6 +54,7 @@
 }
 @media (min-width: $small-screen) {
 	.cart {
+		width: $big-screen-cart-width;
 		right: $big-screen-margin;
 		top: calc($big-screen-header-height - 0.5rem);
 		box-shadow: -5px 8px 20px $neutral-300;
