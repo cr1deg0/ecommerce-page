@@ -16,7 +16,6 @@ export type ProductType = {
 	description: string
 	price: number
 	discount: number
-	discounted_price: number
 	images: ImgType[]
 }
 
@@ -26,12 +25,8 @@ const initProductState: ProductType = {
 	description: '',
 	price: 0,
 	discount: 0,
-	discounted_price: 0,
 	images: [],
 }
-
-// type ProductsContextType = { ProductType[] }
-// const initProductContextState: ProductType = {}
 
 export const ProductContext = createContext<null | ProductType>(null)
 
