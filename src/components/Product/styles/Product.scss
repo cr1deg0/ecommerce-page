@@ -27,14 +27,15 @@
 @media (min-width: $small-screen) {
 	.product-description {
 		h1 {
-			font-size: $fs-300;
+			font-size: $fs-400;
+			font-weight: $font-bold;
 		}
 		h2 {
-			font-size: $fs-800;
+			font-size: $fs-900;
 			margin-bottom: 1.6rem;
 		}
 		p {
-			font-size: $fs-400;
+			font-size: $fs-500;
 			margin-bottom: 1.5rem;
 		}
 	}
@@ -62,7 +63,7 @@
 	}
 	.original-price {
 		font-size: $fs-500;
-		color: $neutral-300;
+		color: $neutral-400;
 		text-decoration: line-through;
 		font-weight: $font-medium;
 	}

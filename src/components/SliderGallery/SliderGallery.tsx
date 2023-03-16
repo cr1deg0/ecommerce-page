@@ -41,7 +41,7 @@ const SliderGallery = ({
 					aria-labelledby='btn-img-previous'
 					onClick={() => prevIndex()}
 				>
-					<title id='btn-img-previous'>Left pointing arrow</title>
+					<title id='btn-img-previous'>Previous image</title>
 					<path
 						d='M11 1 3 9l8 8'
 						strokeWidth='3'
@@ -74,7 +74,7 @@ const SliderGallery = ({
 					aria-labelledby='btn-img-next'
 					onClick={() => nextIndex()}
 				>
-					<title id='btn-img-next'>Right pointing arrow</title>
+					<title id='btn-img-next'>Next image</title>
 					<path
 						d='m2 1 8 8-8 8'
 						strokeWidth='3'

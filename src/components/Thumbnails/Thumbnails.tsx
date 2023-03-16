@@ -13,6 +13,7 @@ const Thumbnails = ({
 }: PropsType) => {
 	const product = useProduct()
 	const productImages = product.images
+
 	return (
 		<div className='thumbnails'>
 			{productImages.map((item) => (
@@ -29,12 +30,9 @@ const Thumbnails = ({
 						className={`thumbnail-btn-${item.id}`}
 					/>
 					<label htmlFor={`thumbnail-${item.id}`}>
+						<span className='sr-only'>{item.alt}</span>
 						<span>
-							<img
-								src={item.src}
-								alt={item.alt}
-								className='thumbnail-img'
-							/>
+							<img src={item.src} alt='' className='thumbnail-img' />
 						</span>
 					</label>
 				</span>
