@@ -42,10 +42,6 @@
 		svg {
 			fill: $neutral-400;
 		}
-		svg:hover,
-		svg:focus {
-			fill: $neutral-500;
-		}
 		span {
 			background-color: $primary-300;
 			color: $primary-100;
@@ -58,12 +54,21 @@
 			right: -5px;
 		}
 	}
+	button:hover,
+	button:focus {
+		svg {
+			fill: $neutral-500;
+		}
+	}
 
 	a {
 		img {
 			max-width: 46px;
 		}
-		img:hover {
+	}
+	a:hover,
+	a:focus {
+		img {
 			outline: 2px solid $primary-300;
 			border-radius: 50%;
 		}

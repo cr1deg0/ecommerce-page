@@ -16,7 +16,8 @@
 			color: $neutral-400;
 		}
 	}
-	li:hover {
+	li:hover,
+	li:focus-within {
 		border-bottom: 3px solid $primary-300;
 
 		a {
