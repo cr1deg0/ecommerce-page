@@ -23,7 +23,7 @@ const CartItem = ({ index }: PropsType) => {
 				<p className='item-data'>
 					{useFormatPrice(cartItem.price)} x {cartItem.qty}
 					<span className='item-data bold'>
-						{useFormatPrice(cartItem.price, 100, cartItem.qty)}
+						{useFormatPrice(cartItem.price, 0, cartItem.qty)}
 					</span>
 				</p>
 			</span>
