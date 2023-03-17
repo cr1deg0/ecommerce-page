@@ -1,5 +1,4 @@
 import { render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { describe, it, vi } from 'vitest'
 import { ProductContext } from '../../../context/ProductProvider'
 import { CartContext } from '../../../context/CartProvider'
