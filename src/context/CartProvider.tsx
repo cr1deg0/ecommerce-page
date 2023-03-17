@@ -6,6 +6,10 @@ export type CartItemType = {
 	name: string
 	price: number
 	qty: number
+	img: {
+		src: string
+		alt: string
+	}
 }
 
 type CartStateType = { cart: CartItemType[] }
@@ -34,7 +38,7 @@ const reducer = (
 			if (!action.payload) {
 				throw new Error('payload missing in ADD action')
 			}
-			const { sku, name, price, qty } = action.payload
+			const { sku, name, price, qty, img } = action.payload
 			const filteredCart = state.cart.filter(
 				(item) => item.sku !== sku
 			)
@@ -42,7 +46,7 @@ const reducer = (
 				...state,
 				cart: [
 					...filteredCart,
-					{ sku: sku, name: name, price: price, qty: qty },
+					{ sku: sku, name: name, price: price, qty: qty, img: img },
 				],
 			}
 		}

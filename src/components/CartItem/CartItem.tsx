@@ -5,7 +5,6 @@ import useFormatPrice from '../../hooks/useFormatPrice'
 
 type PropsType = { index: number }
 const CartItem = ({ index }: PropsType) => {
-	const product = useProduct()
 	const { dispatch, REDUCER_ACTIONS, cart } = useCart()
 	const cartItem = cart[index]
 
@@ -18,10 +17,7 @@ const CartItem = ({ index }: PropsType) => {
 
 	return (
 		<div className='cart-item'>
-			<img
-				src={product.images[0].src}
-				alt={product.images[0].alt}
-			></img>
+			<img src={cartItem.img.src} alt={cartItem.img.alt}></img>
 			<span>
 				<h5 className='item-data'>{cartItem.name}</h5>
 				<p className='item-data'>
