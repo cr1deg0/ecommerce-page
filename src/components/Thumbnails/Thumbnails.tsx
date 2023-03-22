@@ -15,7 +15,7 @@ const Thumbnails = ({
 	const productImages = product.images
 
 	return (
-		<div className='thumbnails'>
+		<fieldset className='thumbnails'>
 			{productImages.map((item) => (
 				<span key={item.id}>
 					<input
@@ -37,7 +37,7 @@ const Thumbnails = ({
 					</label>
 				</span>
 			))}
-		</div>
+		</fieldset>
 	)
 }
 
