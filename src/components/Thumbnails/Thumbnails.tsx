@@ -16,6 +16,7 @@ const Thumbnails = ({
 
 	return (
 		<fieldset className='thumbnails'>
+			<legend className='sr-only'>Product images</legend>
 			{productImages.map((item) => (
 				<span key={item.id}>
 					<input
