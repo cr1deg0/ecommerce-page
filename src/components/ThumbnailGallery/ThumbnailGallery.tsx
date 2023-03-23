@@ -4,8 +4,14 @@ import './styles/ThumbnailGallery.scss'
 import Thumbnails from '../Thumbnails/Thumbnails'
 import { useProduct } from '../../hooks/useProduct'
 
-const ThumbnailGallery = () => {
-	const [thumbnailIndex, setThumbnailIndex] = useState(0)
+type PropsType = {
+	thumbnailIndex: number
+	setThumbnailIndex: React.Dispatch<React.SetStateAction<number>>
+}
+const ThumbnailGallery = ({
+	thumbnailIndex,
+	setThumbnailIndex,
+}: PropsType) => {
 	const lightboxToggler = useLightboxToggler()
 	const product = useProduct()
 	const productImages = product.images
@@ -15,7 +21,7 @@ const ThumbnailGallery = () => {
 			<button onClick={() => lightboxToggler(true)}>
 				<img
 					src={productImages[thumbnailIndex].src}
-					alt={productImages[thumbnailIndex].alt}
+					alt={`${productImages[thumbnailIndex].alt}. View images in gallery mode.`}
 					className='main-thumbnail-img'
 				/>
 			</button>

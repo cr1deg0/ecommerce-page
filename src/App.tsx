@@ -17,7 +17,9 @@ function App() {
 
 	return (
 		<>
-			{product.sku && lighboxState && !smallScreen && <Lightbox />}
+			{product.sku && lighboxState && !smallScreen && (
+				<Lightbox currentIndex={imgIndex} />
+			)}
 			<Header />
 			{product.sku ? (
 				<main className='main-section' id='main-section'>
@@ -27,7 +29,10 @@ function App() {
 							setGalleryIndex={setImgIndex}
 						/>
 					) : (
-						<ThumbnailGallery />
+						<ThumbnailGallery
+							thumbnailIndex={imgIndex}
+							setThumbnailIndex={setImgIndex}
+						/>
 					)}
 					<Product />
 				</main>
