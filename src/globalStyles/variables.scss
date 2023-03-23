@@ -35,6 +35,7 @@ $black-semidark: rgba(0, 0, 0, 0.8);
 
 // Change also breakpoint size in useSmallScreen hook
 $small-screen: 800px;
+$md-screen: 1200px;
 
 // components
 
@@ -42,6 +43,8 @@ $small-screen-margin: 1.5rem;
 $small-screen-header-height: 60px;
 $small-screen-img-height: 340px;
 $small-screen-cart-width: calc(100vw - 1rem);
+
+$md-screen-max-width: 340px;
 
 $big-screen-margin: 6rem;
 $big-screen-header-height: 100px;

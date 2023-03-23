@@ -19,3 +19,11 @@
 	max-width: $big-screen-max-width;
 	max-height: 100%;
 }
+@media (min-width: $small-screen) and (max-width: $md-screen) {
+	.gallery--thumbnail-main {
+		max-width: $md-screen-max-width;
+	}
+	.main-thumbnail-img {
+		max-width: $md-screen-max-width;
+	}
+}
