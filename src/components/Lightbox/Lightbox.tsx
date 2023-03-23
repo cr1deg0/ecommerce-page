@@ -4,11 +4,13 @@ import SliderGallery from '../SliderGallery/SliderGallery'
 import Thumbnails from '../Thumbnails/Thumbnails'
 import './styles/Lightbox.scss'
 
-const Lightbox = () => {
-	const [imgIndex, setImgIndex] = useState(0)
+type PropsType = {
+	currentIndex: number
+}
+const Lightbox = ({ currentIndex }: PropsType) => {
+	const [imgIndex, setImgIndex] = useState(currentIndex)
 	const lightboxToggler = useLightboxToggler()
 	const closeBtnRef = useRef<HTMLButtonElement>(null)
-
 	useEffect(() => {
 		if (closeBtnRef.current) {
 			closeBtnRef.current.focus()
