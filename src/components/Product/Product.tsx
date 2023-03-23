@@ -72,7 +72,7 @@ const Product = () => {
 							/>
 						</svg>
 					</button>
-					<span>{qty}</span>
+					<span data-testid='product-qty'>{qty}</span>
 					<button
 						className='right-btn'
 						onClick={() => setQty((prev) => prev + 1)}
