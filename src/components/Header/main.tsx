@@ -51,12 +51,14 @@ const Header = () => {
 								/>
 							</svg>
 							{totalItems > 0 ? (
-								<span aria-live='polite'>
+								<span aria-live='polite' data-testid='cart-items'>
 									{totalItems}
-									<span className='sr-only'>items in the cart</span>
+									<span className='sr-only'>{`${
+										totalItems === 1 ? 'item' : 'items'
+									} in the cart`}</span>
 								</span>
 							) : (
-								<span aria-live='polite'>
+								<span aria-live='polite' data-testid='cart-items'>
 									<span className='sr-only'>
 										No items in the cart
 									</span>
