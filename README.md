@@ -2,6 +2,8 @@
 
 This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+<img width="1319" alt="Ecommerce screenshot" src="https://github.com/cr1deg0/ecommerce-page/assets/86016298/c4a6c5f9-82e9-49f7-8d3b-1c47f02d7d57">
+
 ## Table of contents
 
 - [Overview](#overview)
